@@ -47,7 +47,7 @@ platform-SDET/
 To run this project, ensure you have the following installed:
 
 - Docker and Docker Compose
-- Python 3.9+ (если запускать без Docker)
+- Python 3.9+ (if run without Docker)
 - Poetry (for dependency management)
 - Allure (for generating and viewing test reports)
 
@@ -55,7 +55,7 @@ To run this project, ensure you have the following installed:
 
 1. Clone the Repository:
     ```bash
-    git clone https://github.com/your-repo/platform-SDET.git
+    git clone https://github.com/moterq/platform-SDET.git
     cd platform-SDET
     ```
 2. If you don't already have Poetry and allure installed, install it:
