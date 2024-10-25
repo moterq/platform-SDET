@@ -1,29 +1,12 @@
 import pytest
-import json
 import asyncio
-from httpx import AsyncClient
-import os
-import websockets
-from config import BASE_URL, BASE_WEBSOCKET_URI
-import pytest
-import asyncio
-import websockets
-import json
 import httpx
+
+from config import BASE_URL, BASE_WEBSOCKET_URI
 
 
 base_url = BASE_URL
 websocket_uri = BASE_WEBSOCKET_URI
-
-
-# @pytest.mark.asyncio
-# async def test_websocket_order_status():
-#     async with websockets.connect(websocket_uri) as websocket:
-#         await websocket.send(json.dumps({"order_id": 1}))
-#         response = await websocket.recv()
-#         data = json.loads(response)
-#         assert data["order_id"] == 1
-#         assert data["status"] in ["PENDING", "EXECUTED", "CANCELLED"]
 
 
 @pytest.mark.asyncio

@@ -1,8 +1,6 @@
-import json
 import logging
 import requests
 
-from collections.abc import Callable
 from typing import Optional
 from sdk.logger import logger
 
