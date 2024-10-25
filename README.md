@@ -108,17 +108,28 @@ To run this project, ensure you have the following installed:
 
 ## Running with Docker
 
-1. Build and Start the Docker Containers:
+1. Clone the Repository:
+    ```bash
+    git clone https://github.com/moterq/platform-SDET.git
+    cd platform-SDET
+    ```
+
+2. Install Dependencies:
+    ```bash
+    poetry install
+    ```
+
+3. Build and Start the Docker Containers:
     ```bash
     docker-compose up -d api
     ```
 
-2. Run Tests in Docker:
+4. Run Tests in Docker:
     ```bash
     docker-compose up --build tests
     ```
 
-3. Generate Allure Report in Docker:
+5. Generate Allure Report in Docker:
     ```bash
     docker run --rm -it platform-sdet-tests allure serve reports/
     ```
