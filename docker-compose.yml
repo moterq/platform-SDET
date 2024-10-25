@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    environment:
+      - .env
+
+  tests:
+    build:
+      context: .
+      dockerfile: Dockerfile.test
+    command: /bin/sh -c "poetry run pytest --alluredir=reports/" # && poetry run allure serve reports/
+    depends_on:
+      - api
+    environment:
+      - .env

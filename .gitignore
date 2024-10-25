@@ -1,0 +1,24 @@
+# Envs
+venv/
+
+# Logs
+logs/
+*.log
+
+# Sys & IDE
+.idea/
+.vscode/
+__pycache__/
+*.pyc
+*.pyo
+
+# Docker artifacts
+docker-compose.override.yml
+docker-compose.override.*.yml
+
+# Poetry
+poetry.lock
+.cache/
+
+# Allure
+reports/

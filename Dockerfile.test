@@ -1,0 +1,40 @@
+# Using a base image with Python
+FROM python:3.9-buster
+
+# Installing system dependencies required for building packages
+RUN apt-get update && apt-get install -y \
+    build-essential \
+    libffi-dev \
+    libssl-dev \
+    wget \
+    openjdk-11-jdk \
+    unzip \
+    && rm -rf /var/lib/apt/lists/*
+
+
+# Installing Poetry
+RUN pip install --no-cache-dir poetry
+
+# Installing Allure
+RUN wget https://github.com/allure-framework/allure2/releases/download/2.17.0/allure-2.17.0.zip \
+    && unzip allure-2.17.0.zip -d /opt/ \
+    && ln -s /opt/allure-2.17.0/bin/allure /usr/bin/allure \
+    && rm allure-2.17.0.zip
+
+# Setting the working directory
+WORKDIR /app
+
+# Copying project files
+COPY pyproject.toml poetry.lock ./
+
+# Installing dependencies using Poetry
+RUN poetry install --no-interaction --no-ansi
+
+# Copying remaining project files
+COPY . .
+
+ENV PYTHONPATH "/app"
+
+# Running tests (uncommented part) and then Allure if needed (commented part)
+CMD ["sh", "-c", "poetry run pytest --alluredir=reports"]
+# CMD ["sh", "-c", "poetry run pytest --alluredir=reports/ && allure serve reports/"]
