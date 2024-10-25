@@ -53,6 +53,16 @@ To run this project, ensure you have the following installed:
 
 ## Local Setup and Run 
 
+#### Quick start and run in brief:
+
+   - Clone repo + `cd platform-SDET`
+   - Command `poetry install`
+   - Uncomment `.env` file for `localhost` url's use
+   - Command `poetry run pytest -s ./tests --alluredir=reports/`
+   - Command `allure serve reports/`
+
+#### Run with details:
+
 1. Clone the Repository:
     ```bash
     git clone https://github.com/moterq/platform-SDET.git

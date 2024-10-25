@@ -9,6 +9,7 @@ base_url = BASE_URL
 websocket_uri = BASE_WEBSOCKET_URI
 
 
+# Flaky
 @pytest.mark.asyncio
 async def test_order_status_flow():
     async with httpx.AsyncClient() as ac:

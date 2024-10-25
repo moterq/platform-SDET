@@ -43,6 +43,7 @@ async def test_get_order_by_id_success():
         assert data["status"] == "PENDING" or data["status"] == "EXECUTED"
 
 
+# Flaky
 @pytest.mark.asyncio
 async def test_delete_pending_order():
     # Step 1: Create a new order

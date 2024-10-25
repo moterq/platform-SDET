@@ -14,7 +14,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile.test
-    command: /bin/sh -c "poetry run pytest --alluredir=reports/" # && poetry run allure serve reports/
+    command: ["poetry", "run", "pytest","-s", "--alluredir=reports/"] # /bin/sh -c "poetry run pytest --alluredir=reports/ && poetry run allure serve reports/"
     depends_on:
       - api
     environment:
